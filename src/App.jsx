@@ -7,10 +7,17 @@ import {
 
 function App() {
   const [files, setFiles] = useState(() => {
-    const saved = localStorage.getItem('smartFiles');
-    return saved
-      ? JSON.parse(saved)
-      : [{ id: 1, name: "Project_Draft.pdf", size: "2.4 MB", type: "file" }];
+    try {
+      if (typeof window === 'undefined') {
+        return [{ id: 1, name: "Project_Draft.pdf", size: "2.4 MB", type: "file" }];
+      }
+      const saved = localStorage.getItem('smartFiles');
+      return saved
+        ? JSON.parse(saved)
+        : [{ id: 1, name: "Project_Draft.pdf", size: "2.4 MB", type: "file" }];
+    } catch (e) {
+      return [{ id: 1, name: "Project_Draft.pdf", size: "2.4 MB", type: "file" }];
+    }
   });
 
   const [searchQuery, setSearchQuery] = useState("");
@@ -18,11 +25,17 @@ function App() {
   const fileInputRef = useRef(null);
 
   useEffect(() => {
-    localStorage.setItem('smartFiles', JSON.stringify(files));
+    try {
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('smartFiles', JSON.stringify(files));
+      }
+    } catch (e) {
+      // ignore localStorage write errors
+    }
   }, [files]);
 
   const handleFileUpload = (e) => {
-    if (e.target.files.length > 0) {
+    if (e?.target?.files && e.target.files.length > 0) {
       const file = e.target.files[0];
 
       const newFile = {
@@ -32,7 +45,7 @@ function App() {
         type: file.type.includes("image") ? "image" : "file"
       };
 
-      setFiles([newFile, ...files]);
+      setFiles(prev => [newFile, ...prev]);
     }
   };
 
@@ -118,7 +131,7 @@ function App() {
 
           {/* UPLOAD */}
           <button
-            onClick={() => fileInputRef.current.click()}
+            onClick={() => fileInputRef.current?.click()}
             className="bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded-xl flex items-center gap-2 transition-all"
           >
             <Plus size={18} /> Upload
