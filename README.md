@@ -1,78 +1,20 @@
-# 📂 Smart File Organizer
+# React + Vite
 
-A modern file management application built with React and Vite. It helps users upload, organize, search, and manage files through a clean and responsive interface.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
----
+Currently, two official plugins are available:
 
-## ✨ Features
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-- 📁 Upload files
-- 💾 Files are automatically saved using Local Storage and remain available after page refresh
-- 🔍 Search files instantly
-- 🗑️ Delete uploaded files
-- 📂 Sidebar navigation
-- 📊 Storage usage display
-- 📏 Display file size (MB)
-- 💻 Modern and responsive user interface
+## React Compiler
 
----
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## 🛠️ Tech Stack
+## Expanding the ESLint configuration
 
-- React
-- Vite
-- JavaScript
-- HTML5
-- CSS3
-- Local Storage
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 
----
 
-## 🌐 Live Demo
 
-https://smart-file-organizer-sepia.vercel.app
-
----
-
-## 🚀 Getting Started
-
-```bash
-npm install
-npm run dev
-```
-
----
-
-## 📸 Screenshots
-
-> Add 2–3 screenshots of your project here.
-
----
-
-## 📝 Project Status
-
-This project is a frontend application built with React and Vite.
-
-Uploaded files are stored using the browser's Local Storage, allowing them to remain available even after refreshing the page.
-
-Backend integration has not been added yet.
-
----
-
-## 🔮 Future Improvements
-
-- Backend integration
-- Cloud storage support
-- User authentication
-- AI-powered file organization
-- File sorting and filtering
-
----
-
-## 👨‍💻 Author
-
-**Muhammed Ashik**
-
----
-
-⭐ If you like this project, consider giving it a star!
+Update for deployment check
