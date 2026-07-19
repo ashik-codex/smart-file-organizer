@@ -1,3 +1,5 @@
+Hi 👋, I'm Muhammed Ashik H
+
 # 📂 Smart File Organizer
 
 A modern file management application built with React and Vite. It helps users upload, organize, search, and manage files through a clean and responsive interface.
